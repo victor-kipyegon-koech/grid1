@@ -1,92 +1,118 @@
-body {
-  margin: 0;
-  padding: 4rem;
-  background-color: #ecf2f8;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.card {
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  color: white;
-}
-
-.card h3 {
-  margin: 1rem 0 0.5rem;
-}
-
-.card p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-/* Cards & grid positioning */
-.card1 {
-  background-color: hsl(263, 55%, 52%);
-  grid-column: 1 / span 2;
-  grid-row: 1;
-}
-
-.card2 {
-  background-color: hsl(217, 19%, 35%);
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.card3 {
-  background-color: white;
-  color: hsl(217, 19%, 35%);
-  grid-column: 4;
-  grid-row: 1 / span 2;
-}
-
-.card4 {
-  background-color: hsl(219, 29%, 14%);
-  grid-column: 2 / span 2;
-  grid-row: 2;
-}
-
-.card5 {
-  background-color: white;
-  color: hsl(217, 19%, 35%);
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.profile {
-  display: grid;
-  grid-template-columns: 50px auto;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.profile img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-info h4 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.profile-info span {
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #ecf2f8;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1100px;
+      background-color: #f0f5ff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: 
+        "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+      gap: 20px;
+    }
+    .card {
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover; 
+      border: 2px solid grey;
+    }
+    .name {
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .title {
+      font-size: 11px;
+      opacity: 0.5;
+    }
+    .headline {
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .quote {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    .daniel {
+      background-color: #7541c8;
+      color: white;
+      grid-area: daniel;
+      position: relative;
+      z-index: 1;
+    }
+    .daniel::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      font-size: 500px;
+      opacity: 0.15;
+      font-family: Georgia, serif;
+      line-height: 1;
+      z-index: -1;
+    }
+    .daniel .avatar {
+      border-color: #a775f1;
+    }
+    .jonathan {
+      background-color: #48556a;
+      color: white;
+      grid-area: jonathan;
+    }
+    .jonathan .avatar {
+      border-color: #7289da;
+    }
+    .jeanette {
+      background-color: white;
+      color: #48556a;
+      grid-area: jeanette;
+    }
+    .jeanette .avatar {
+      border-color: transparent;
+    }
+    .patrick {
+      background-color: #19212e;
+      color: white;
+      grid-area: patrick;
+    }
+    .patrick .avatar {
+      border-color: #7541c8;
+    }
+    .kira {
+      background-color: white;
+      color: #48556a;
+      grid-area: kira;
+    }
+    .kira .avatar {
+      border-color: transparent;
+    } 
